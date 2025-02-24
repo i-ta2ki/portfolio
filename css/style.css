@@ -1,0 +1,423 @@
+/*★全ページ共通の設定 */
+/* ボディのスタイル */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  color: white; /* 全ての文字を白に設定 */
+  background-color: #333; /* 濃いグレーの背景色を設定 */
+}
+
+/* ロゴのスタイル */
+.logo {
+  height: 70px;
+  width: auto;
+  z-index: 10000; /* 高めの値を設定して前面に表示 */
+}
+
+/* ナビゲーションリストのスタイル設定 */
+.navbar {
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white; /* リンクの文字色を白に設定 */
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+.navbar ul li a:hover {
+  background-color: #575757;
+}
+
+.main-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.main-content section {
+  margin: 40px 0;
+}
+
+/* ローディング画面 */
+#loading {
+  transition: all 1s;
+  background-color: #ddd;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  width: 200px;
+  height: 200px;
+}
+
+/* ローディング完了したらローディング画面を隠す */
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer {
+  background-color: transparent; /* 背景色を透明に設定 */
+  color: white; /* 文字の色を白に設定 */
+  text-align: center;
+  padding: 50px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-title {
+  font-size: 6vw; /* フォントサイズを調整 */
+  margin: 0; /* マージンをリセット */
+}
+
+/* コンテンツ部分 */
+.gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+
+/*★TOPページ*/
+/* 動画背景のスタイル設定 */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* 背面に配置 */
+}
+
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  filter: brightness(50%); /* 輝度を下げる（調整可能） */
+}
+
+header {
+  background-color: transparent; /* 背景色を透明に設定 */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右の要素を左右に揃える */
+}
+
+
+/*★VISIONページ*/
+/* 親要素の設定 */
+.vision-container {
+  text-align: center;
+  z-index: 1; /* 他の要素の前面に表示 */
+}
+
+/* VISIONタイトルのスタイル設定 */
+.vision-title {
+  position: relative; /* 通常のフローに戻す */
+  top: 20px; /* ヘッダーの下に配置 */
+  left: 50%; /* 中央に配置 */
+  transform: translateX(-50%); /* 中央に配置 */
+  font-size: 48px; /* テキストのサイズを調整 */
+  color: white; /* テキストの色を白に設定 */
+  margin-bottom: 40px; /* タイトルの下に余白を追加 */
+}
+
+.vision-content {
+  display: flex;
+  flex-direction: column; /* セクションを縦に並べる */
+  gap: 20px; /* セクション間の間隔を設定 */
+}
+
+.vision-content section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* セクション内の要素を中央揃えに */
+  text-align: center; /* テキストを中央揃えに */
+}
+
+.vision-content img {
+  max-width: 80%; /* 画像の最大幅を設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  border-radius: 10px; /* 画像に角丸を追加 */
+  margin-top: 10px; /* 画像の上部に余白を追加 */
+}
+
+/*★IDEAページ*/
+.image-slider {
+  position: relative; /* 必要に応じて親要素の位置を相対位置に設定 */
+  padding-bottom: 50px; /* 画像スライダーの下部に余白を追加 */
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 10px; /* ドットナビゲーションをスライダーの下に配置 */
+  width: 100%;
+  text-align: center;
+}
+
+.slick-dots li {
+  margin: 0 5px; /* ドット間の間隔を調整 */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* ドットのサイズを調整 */
+  color: white; /* ドットの色を調整（オプション） */
+}
+
+.slick-slide {
+  margin: 0 10px; /* 各スライド間に適度な余白を設定 */
+}
+
+.slick-slide img {
+  opacity: 0.6; /* デフォルトで画像を少し透明にする */
+  transition: opacity 0.3s; /* 透明度のアニメーションを追加 */
+}
+
+.slick-center img {
+  opacity: 1; /* 中央の画像を完全に表示する */
+}
+
+#image-description {
+  position: relative; /* 相対位置に設定 */
+  top: -50px; /* 上部の位置を調整 */
+  width: 100%; /* 幅を100%に設定 */
+  text-align: center; /* 中央揃えに設定 */
+  z-index: 10; /* 他の要素より前面に表示 */
+}
+
+#image-description p {
+  margin: 0;
+  font-size: 36px; /* 見出しのフォントサイズを36pxに設定 */
+  font-weight: bold; /* 見出しをボールドに設定 */
+  line-height: 1.5;
+  color: #f8f8f8; /* テキストの色をグレーに設定 */
+  text-align: center; /* テキストを中央揃えに設定 */
+}
+
+#image-description p span {
+  display: block;
+  font-size: 12px; /* 説明文のフォントサイズを24pxに設定 */
+  font-weight: normal; /* 説明文のボールドを外す */
+  margin: 30px 0; /* 上下の余白を設定 */
+  color: #cccccc; /* 説明文の色を設定 */
+}
+
+
+
+#additional-texts {
+  margin-top: 20px; /* 上部の余白を設定 */
+  text-align: center;
+}
+
+#additional-texts p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+
+/*★IDEA2ページ*/
+.idea2-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.idea2-images img {
+  width: 200px; /* 固定幅を指定 */
+  height: 150px; /* 固定高さを指定 */
+  object-fit: cover; /* 画像の縦横比を保ちつつ、全体を表示 */
+  border-radius: 5px; /* 角を丸くするオプション */
+}
+
+.idea2-images2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.idea2-images2 img {
+  width: 100px; /* 固定幅を指定 */
+  height: 100px; /* 固定高さを指定 */
+  object-fit: cover; /* 画像の縦横比を保ちつつ、全体を表示 */
+  border-radius: 5px; /* 角を丸くするオプション */
+}
+
+.business-type {
+  font-size: 18px; /* お好みのフォントサイズを指定 */
+  font-weight: normal;
+  margin-top: 40px; /* 調整したmargin-topの値 */
+}
+
+
+/*★MEMBERページ*/
+
+/*
+GALLERY
+================================================ */
+.gallery {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  gap: 1rem;
+  width: 100%;
+  height: auto; /* 高さを自動にしてコンテンツに合わせる */
+  padding: 0 10rem; /* 左右両端の余白を設定 */
+  box-sizing: border-box; /* 余白を含めた幅の計算 */
+  position: relative; /* 子要素の絶対位置を基準にする */
+}
+.gallery-image {
+  align-self: flex-end; /* 右寄せに配置 */
+  width: 380px; /* 固定幅を設定（お好みに応じて調整してください） */
+  height: 280px; /* 固定高さを設定（お好みに応じて調整してください） */
+  margin-right: calc(51%); /* 親要素の中央線に合わせるように調整 */
+  position: relative;
+}
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-thumbnails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(7, 1fr); /* 1行に7列 */
+  list-style: none;
+  width: 100%; /* 幅を100%にする */
+  height: auto; /* 高さを自動にしてコンテンツに合わせる */
+  box-sizing: border-box; /* 余白を含めた幅の計算 */
+}
+.gallery-thumbnails img {
+  width: 100%;
+  height: 100px; /* ここで高さを指定します。お好みに応じて調整してください */
+  object-fit: cover;
+}
+
+#image-description-member {
+  color: black; /* テキストカラーを黒に設定 */
+  position: absolute; /* 絶対位置を指定 */
+  top: -16px; /* 親要素の上端からの距離を指定 */
+  right: -400px; /* 親要素の右端からさらに右に配置 */
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明の背景を指定 */
+  width: 100%; /* 幅を100%に設定 */
+  text-align: left; /* 左寄せに設定 */
+  padding-left: 20px; /* 左側にパディングを追加 */
+  padding-top: 10px; /* 左側にパディングを追加 */
+  padding-bottom: 10px; /* 左側にパディングを追加 */
+  z-index: 10; /* 他の要素より前面に表示 */
+  background-image: url('path_to_your_image.jpg'); /* 背景画像を設定 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*★CONTACTページ*/
+.contact-box {
+  background-color: white; /* 背景色を白に設定 */
+  color: black; /* テキストの色を黒に設定 */
+  padding: 20px; /* 内側の余白を設定 */
+  border-radius: 10px; /* 角を丸くする */
+  max-width: 600px; /* 最大幅を設定 */
+  margin: 20px auto; /* 上下の余白を設定し、中央寄せ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* シャドウを追加 */
+}
+
+/* フォームフィールドのスタイル */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 自由記述欄のサイズを大きくする */
+textarea#free {
+  height: 130px; /* 高さを調整 */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/*無効な送信ボタンのスタイル*/
+button:disabled {
+  background-color: #d3d3d3; /* 薄いグレーに設定 */
+  color: #a9a9a9; /* テキストの色も明るいグレーに変更 */
+  cursor: not-allowed; /* カーソルを変更 */
+}
+
+
