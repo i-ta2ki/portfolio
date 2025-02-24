@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ビジネスデザイン部特設サイト</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="contact-page">
+
+  <div id="loading">
+    <img class="spinner" src="https://assets.codepen.io/85188/loading.png" alt="">
+  </div>
+
+  <header class="header">
+    <img src="images/JVCKENWOOD.png" alt="Company Logo" class="logo"> <!-- 企業ロゴを追加 -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">TOP</a></li>
+        <li><a href="vision.html">VISION</a></li>
+        <li><a href="idea2.html">IDEA</a></li>
+        <li><a href="member.html">MEMBER</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="vision-container">
+    <!-- VISIONの文字を表示する要素を追加 -->
+    <div class="vision-title">
+      CONTACT
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <p>我々はあなたの質問やアイデアを受け付けます。お気軽に問い合わせください。</p>
+    
+    <form id="contact-form" action="send_email.php" method="post">
+      <label for="email">メールアドレス（任意）:</label>
+      <input type="email" id="email" name="email">
+      
+      <label for="name">名前（任意）:</label>
+      <input type="text" id="name" name="name">
+      
+      <label for="free">自由記述欄:</label>
+      <textarea id="free" name="free" required></textarea>
+      
+      <button type="submit" id="submit-btn" disabled>送信</button>
+    </form>
+  </div>  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="js/script.js"></script> <!-- JavaScriptファイルを読み込み -->
+</body>
+</html>
